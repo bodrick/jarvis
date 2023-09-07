@@ -35,7 +35,7 @@
   "dependencies": {
     "ansi-to-html": "^0.6.3",
     "import-from": "^2.1.0",
-    "obj-str": "^1.0.0",
+    "obj-str": "^1.1.0",
     "parse-authors": "^0.2.4",
     "polka": "^0.3.1",
     "react-favicon": "^0.0.11",
