@@ -3,18 +3,19 @@
   "version": "0.3.2",
   "description": "A very intelligent webpack dashboard",
   "main": "dist/server/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "precommit": "lint-staged",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "prebuild": "rm -rf dist",
     "copy:server": "ncp src/server dist/server",
-    "copy:assets":
-      "ncp src/index.html dist/index.html && ncp src/assets dist/assets",
-    "build":
-      "webpack --env.production --config config/webpack && npm run copy:server && npm run copy:assets",
-    "watch": "JARVIS_ENV=development webpack --watch --config config/webpack"
+    "copy:assets": "ncp src/index.html dist/index.html && ncp src/assets dist/assets",
+    "build": "webpack --env.production --config config/webpack && npm run copy:server && npm run copy:assets",
+    "watch": "JARVIS_ENV=development webpack --watch --config config/webpack",
+    "test": "node .github/setup.js"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -38,7 +39,7 @@
     "obj-str": "^1.0.0",
     "parse-authors": "^0.2.4",
     "polka": "^0.3.1",
-    "react-favicon": "^0.0.26",
+    "react-favicon": "^0.0.11",
     "serve-static": "^1.13.1",
     "socket.io": "^2.0.3",
     "url-loader": "^0.6.2"
@@ -79,6 +80,9 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "lint-staged": {
-    "src/**/*.{js,json,scss}": ["prettier --write", "git add"]
+    "src/**/*.{js,json,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
